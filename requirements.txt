@@ -1,0 +1,8 @@
+@'
+Flask
+SQLAlchemy
+Flask-Login
+Flask-Migrate
+python-dotenv
+email-validator
+'@ | Out-File -Encoding UTF8 requirements.txt

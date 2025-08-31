@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-card">
+
+    <!-- Coluna esquerda: formulário -->
+    <div class="auth-left">
+      <h1 class="auth-title">Faça seu login</h1>
+
+      <form method="post" class="auth-form">
+        <label class="field">
+          <span>E-mail</span>
+          <div class="input-wrap">
+            <input type="text" name="username" placeholder="voce@empresa.com" required>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6l10 7L22 6v12H2zM2 6l10 7L22 6H2z" fill="currentColor"/></svg>
+          </div>
+        </label>
+
+        <label class="field">
+          <span>Senha</span>
+          <div class="input-wrap">
+            <input type="password" name="password" placeholder="Sua senha" required>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-6h-1V9a5 5 0 10-10 0v2H6v10h12V11zm-7-2a3 3 0 016 0v2H11V9z" fill="currentColor"/></svg>
+          </div>
+        </label>
+
+        <div class="form-row">
+          <label class="check">
+            <input type="checkbox" name="remember">
+            <span>Lembrar de mim</span>
+          </label>
+          <a class="muted" href="#">Esqueci minha senha</a>
+        </div>
+
+        <button class="btn-primary" type="submit">Entrar</button>
+
+        <p class="small muted">
+          Não tem conta ainda? <a href="#" class="link">Crie agora</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Coluna direita: hero -->
+    <div class="auth-right">
+      <div class="hero">
+        <div class="hero-art">
+          <!-- Coloque um arquivo em static/img/login-illustration.png se quiser -->
+          <img src="{{ url_for('static', filename='img/login-illustration.png') }}" alt="" onerror="this.style.display='none'">
+        </div>
+        <p class="hero-caption">A melhor experiência de login que você já teve na sua vida.</p>
+      </div>
+      <span class="credit">By Batman</span>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

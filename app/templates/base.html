@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Intranet{% endblock %}</title>
+
+  <!-- Fonte: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="page">
+    {% with msgs = get_flashed_messages(with_categories=true) %}
+      {% if msgs %}
+        <div class="flash-wrapper">
+          {% for cat, msg in msgs %}
+            <div class="flash {{cat}}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
